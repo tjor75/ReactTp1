@@ -1,3 +1,5 @@
+import './Cita.css';
+
 export default function Cita() {
     return (
         <div className="cita">
