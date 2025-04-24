@@ -1,13 +1,14 @@
+import { obtenerYYYYMMDD, obtenerHora } from '../lib/fecha';
 import './Cita.css';
 
-export default function Cita() {
+export default function Cita({ mascota, duenio, fechaHora, sintomas }) {
     return (
         <div className="cita">
-            <p>Mascota: <span>Nina</span></p>
-            <p>Dueño: <span>Martin</span></p>
-            <p>Fecha: <span>2021-08-05</span></p>
-            <p>Hora: <span>08:20</span></p>
-            <p>Sintomas: <span>Le duele la pierna</span></p>
+            <p>Mascota: <span>{mascota}</span></p>
+            <p>Dueño: <span>{duenio}</span></p>
+            <p>Fecha: <span>{obtenerYYYYMMDD(fechaHora)}</span></p>
+            <p>Hora: <span>{obtenerHora(fechaHora)}</span></p>
+            <p>Sintomas: <span>{sintomas}</span></p>
             <button className="button elimnar u-full-width">Eliminar ×</button>
         </div>
     );
