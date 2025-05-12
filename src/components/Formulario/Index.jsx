@@ -1,8 +1,8 @@
-import './Formulario.css';
+import './style.css';
 
 export default function Formulario() {
     return (
-        <div class="one-half column">
+        <div className="one-half column">
             <h2>Crear mi Cita</h2>
             <form>
                 <label>Nombre Mascota</label>

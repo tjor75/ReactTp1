@@ -1,5 +1,5 @@
-import { obtenerYYYYMMDD, obtenerHora } from '../lib/fecha';
-import './Cita.css';
+import { obtenerYYYYMMDD, obtenerHora } from '../../../utils/fecha';
+import './style.css';
 
 export default function Cita({ mascota, duenio, fechaHora, sintomas }) {
     return (

@@ -1,4 +1,5 @@
-import Cita from "./Cita";
+import Cita from '../UI/Cita';
+import './style.css';
 
 export default function Listado() {
     return (
