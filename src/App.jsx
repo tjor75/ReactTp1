@@ -1,5 +1,6 @@
 import Formulario from './components/Formulario'
 import Listado from './components/Listado'
+import './App.css'
 
 function App() {
   return (
