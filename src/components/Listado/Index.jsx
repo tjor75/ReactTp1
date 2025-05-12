@@ -1,7 +1,7 @@
 import Cita from '../UI/Cita';
 import './style.css';
 
-export default function Listado() {
+export default function Listado({ citas, setCitas }) {
     return (
         <div className="one-half column">
             <h2>Administra tus citas</h2>
