@@ -12,7 +12,7 @@ export default function Formulario({ setCitas }) {
 
     const agregarCita = (e) => {
         e.preventDefault();
-        setCitas(prev => [...prev, new Cita(mascota.value, propietario.value, fecha.target.value, hora.target.value, sintomas.value)]);
+        setCitas(prev => [...prev, new Cita(mascota.value, propietario.value, fecha.value, hora.value, sintomas.value)]);
         //if (mascota !== '' || propietario !== '' || fecha !== '' || hora >)
         //setCitas([])
     };
