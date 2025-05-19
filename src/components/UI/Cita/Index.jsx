@@ -1,7 +1,10 @@
 import './style.css';
 
 export default function Cita({ cita, setCitas }) { //({ mascota, propietario, fecha, hora, sintomas, setCitas }) {
-    const eliminarCita = () => setCitas(prev => prev.filter(laCita => laCita !== cita));
+    const eliminarCita = () => {
+        if (confirm('¿Deseas realizar esto?'))
+            setCitas(prev => prev.filter(laCita => laCita !== cita))
+    };
 
     return (
         <div className="cita">

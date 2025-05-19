@@ -9,11 +9,21 @@ export default function Formulario({ setCitas }) {
     const [hora, setHora] = useState('');
     const [sintomas, setSintomas] = useState('');
 
-    const agregarCita = (e) => {
-        e.preventDefault();
-        console.log(mascota)
-        setCitas(prev => [new Cita(mascota, propietario, fecha, hora, sintomas), ...prev]);
-        //if (mascota !== '' || propietario !== '' || fecha !== '' || hora >)
+    const agregarCita = ev => {
+        ev.preventDefault();
+
+        if (mascota !== '' && propietario !== '' && fecha !== '' && hora !== '' && sintomas !== '') {
+            if (confirm('¿Deseas realizar esto?')) {
+                setCitas(prev => [new Cita(mascota, propietario, fecha, hora, sintomas), ...prev]);
+                setMascota('');
+                setPropietario('');
+                setFecha('');
+                setHora('');
+                setSintomas('');
+            }
+        } else {
+            alert('Faltan completar campos')
+        }
     };
 
     return (
