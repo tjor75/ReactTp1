@@ -8,4 +8,4 @@ por Uriel Engelberg & Lucas Tjor
 
 ## Correr
 
-`npm start`
+`npm run dev`
