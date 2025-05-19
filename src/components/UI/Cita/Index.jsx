@@ -1,14 +1,16 @@
 import './style.css';
 
-export default function Cita({ mascota, propietario, fecha, hora, sintomas }) {
+export default function Cita({ cita, setCitas }) { //({ mascota, propietario, fecha, hora, sintomas, setCitas }) {
+    const eliminarCita = () => setCitas(prev => prev.filter(laCita => laCita !== cita));
+
     return (
         <div className="cita">
-            <p>Mascota: <span>{mascota}</span></p>
-            <p>Dueño: <span>{propietario}</span></p>
-            <p>Fecha: <span>{fecha}</span></p>
-            <p>Hora: <span>{hora}</span></p>
-            <p>Sintomas: <span>{sintomas}</span></p>
-            <button className="button elimnar u-full-width">Eliminar ×</button>
+            <p>Mascota: <span>{cita.mascota}</span></p>
+            <p>Dueño: <span>{cita.propietario}</span></p>
+            <p>Fecha: <span>{cita.fecha}</span></p>
+            <p>Hora: <span>{cita.hora}</span></p>
+            <p>Sintomas: <span>{cita.sintomas}</span></p>
+            <button className="button elimnar u-full-width" onClick={eliminarCita}>Eliminar ×</button>
         </div>
     );
 };
