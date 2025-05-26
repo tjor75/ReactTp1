@@ -3,13 +3,11 @@ import Formulario from './components/Formulario';
 import Listado from './components/Listado';
 import './App.css';
 
-const ITEM_CITAS = 'citas';
-
 function App() {
   const [citas, setCitas] = useState([]);
   
   useEffect(() => {
-    const citasGuardadas = localStorage.getItem(ITEM_CITAS);
+    const citasGuardadas = localStorage.getItem('citas');
     if (citasGuardadas.length === 0) {
       setCitas(JSON.parse(citasGuardadas));
     }
