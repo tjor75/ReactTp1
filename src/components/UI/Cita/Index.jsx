@@ -1,9 +1,13 @@
 import './style.css';
 
-export default function Cita({ cita, setCitas }) { //({ mascota, propietario, fecha, hora, sintomas, setCitas }) {
+export default function Cita({ cita, setCitas }) {
     const eliminarCita = () => {
         if (confirm('¿Deseas realizar esto?'))
-            setCitas(prev => prev.filter(laCita => laCita !== cita))
+            setCitas(prev => {
+                const nuevo = prev.filter(laCita => laCita !== cita);
+                localStorage.setItem('citas', JSON.stringify(nuevo));
+                return nuevo;
+            })
     };
 
     return (

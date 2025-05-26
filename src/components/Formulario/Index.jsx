@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Cita from '../../utils/Cita';
 import './style.css';
 
 export default function Formulario({ setCitas }) {
@@ -14,7 +13,11 @@ export default function Formulario({ setCitas }) {
 
         if (mascota !== '' && propietario !== '' && fecha !== '' && hora !== '' && sintomas !== '') {
             if (confirm('¿Deseas realizar esto?')) {
-                setCitas(prev => [new Cita(mascota, propietario, fecha, hora, sintomas), ...prev]);
+                setCitas(prev => {
+                    const nuevo = [{mascota, propietario, fecha, hora, sintomas}, ...prev]
+                    localStorage.setItem('citas', JSON.stringify(nuevo));
+                    return nuevo;
+                });
                 setMascota('');
                 setPropietario('');
                 setFecha('');
